@@ -1,0 +1,1741 @@
+<!-- ===================== -->
+<!-- PERFORMANCE & FONTS -->
+<!-- ===================== -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+/* ========== CSS RESET & BASE ========== */
+.rsr-page {
+font-family: 'Open Sans', Arial, sans-serif;
+font-size: 16px;
+line-height: 1.6;
+color: #2C2C2C;
+background: #FAFAFA;
+-webkit-font-smoothing: antialiased;
+margin: 0;
+padding: 0;
+overflow-x: hidden;
+}
+.rsr-page *,
+.rsr-page *::before,
+.rsr-page *::after {
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+}
+.rsr-page img {
+max-width: 100%;
+height: auto;
+display: block;
+}
+.rsr-page a {
+text-decoration: none;
+color: inherit;
+transition: all 0.3s ease;
+}
+.rsr-page ul,
+.rsr-page li {
+list-style: none;
+margin: 0;
+padding: 0;
+}
+.rsr-page h1,
+.rsr-page h2,
+.rsr-page h3,
+.rsr-page h4 {
+font-family: 'Montserrat', sans-serif;
+font-weight: 700;
+color: #001F47;
+line-height: 1.3;
+margin: 0;
+padding: 0;
+}
+.rsr-page h1 {
+font-size: clamp(1.75rem, 5vw, 2.8rem);
+color: #001F47;
+}
+.rsr-page h2 {
+font-size: clamp(1.5rem, 4vw, 2.2rem);
+color: #CC9900;
+}
+.rsr-page h3 {
+font-size: clamp(1.15rem, 3vw, 1.5rem);
+}
+.rsr-page h4 {
+font-size: clamp(1rem, 2.5vw, 1.2rem);
+}
+.rsr-page p {
+margin: 0 0 12px 0;
+padding: 0;
+color: #2C2C2C;
+}
+.rsr-page address {
+font-style: normal;
+}
+/* ========== ICONS FIX ========== */
+.rsr-page i,
+.rsr-page .fas,
+.rsr-page .fab,
+.rsr-page .fa {
+font-family: 'Font Awesome 6 Free', 'Font Awesome 6 Brands', FontAwesome !important;
+font-style: normal;
+display: inline-block;
+}
+.rsr-page .fas { font-weight: 900; }
+.rsr-page .fab { font-weight: 400; }
+/* ========== CONTAINER ========== */
+.rsr-page .container {
+width: 100%;
+max-width: 1200px;
+padding: 0 20px;
+margin: 0 auto;
+}
+.rsr-page .section-padding {
+padding: 50px 0;
+}
+/* ========== BUTTONS ========== */
+.rsr-page .btn {
+display: inline-flex;
+align-items: center;
+justify-content: center;
+gap: 8px;
+background: #CC9900;
+color: #FFFFFF;
+padding: 14px 28px;
+border-radius: 8px;
+font-weight: 700;
+font-family: 'Montserrat', sans-serif;
+font-size: 0.95rem;
+text-transform: uppercase;
+border: none;
+cursor: pointer;
+transition: all 0.3s ease;
+text-align: center;
+white-space: nowrap;
+text-decoration: none;
+letter-spacing: 0.5px;
+}
+.rsr-page .btn:hover {
+background: #B8860B;
+transform: translateY(-2px);
+box-shadow: 0 6px 20px rgba(204, 153, 0, 0.35);
+color: #FFFFFF;
+}
+.rsr-page .btn:focus {
+outline: 2px solid #001F47;
+outline-offset: 3px;
+}
+.rsr-page .btn i {
+font-size: 1rem;
+}
+/* ========== TOP BAR ========== */
+.rsr-page .top-bar {
+display: none;
+background: #001F47;
+color: #FFFFFF;
+font-size: 0.85rem;
+padding: 10px 0;
+border-bottom: 3px solid #CC9900;
+}
+.rsr-page .top-bar .container {
+display: flex;
+justify-content: space-between;
+align-items: center;
+flex-wrap: wrap;
+gap: 10px;
+}
+.rsr-page .top-info {
+display: flex;
+flex-wrap: wrap;
+gap: 25px;
+}
+.rsr-page .top-info span {
+display: inline-flex;
+align-items: center;
+color: #FFFFFF;
+}
+.rsr-page .top-info i {
+color: #CC9900;
+margin-right: 8px;
+font-size: 0.9rem;
+}
+.rsr-page .top-info a {
+color: #FFFFFF;
+}
+.rsr-page .top-info a:hover {
+color: #CC9900;
+}
+.rsr-page .social-icons {
+display: flex;
+align-items: center;
+gap: 8px;
+}
+.rsr-page .social-icons > span {
+margin-right: 10px;
+font-weight: 600;
+color: #FFFFFF;
+}
+.rsr-page .social-icons a {
+width: 32px;
+height: 32px;
+display: flex;
+align-items: center;
+justify-content: center;
+color: #FFFFFF;
+border-radius: 50%;
+font-size: 0.9rem;
+}
+.rsr-page .social-icons a:hover {
+background: #CC9900;
+color: #FFFFFF;
+transform: scale(1.1);
+}
+/* ========== NAVIGATION ========== */
+.rsr-page .main-nav {
+background: #FFFFFF;
+box-shadow: 0 2px 15px rgba(0,31,71,0.1);
+position: sticky;
+top: 0;
+z-index: 1000;
+}
+.rsr-page .nav-container {
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 12px 20px;
+max-width: 1200px;
+margin: 0 auto;
+}
+.rsr-page .logo img {
+max-height: 50px;
+width: auto;
+}
+.rsr-page .nav-cta-mobile {
+display: flex;
+gap: 10px;
+align-items: center;
+}
+.rsr-page .nav-cta-mobile .btn {
+padding: 10px 16px;
+font-size: 0.85rem;
+}
+.rsr-page .nav-cta-mobile .btn i {
+font-size: 1rem;
+margin: 0;
+}
+.rsr-page .nav-menu {
+display: none;
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100vh;
+background: #FFFFFF;
+flex-direction: column;
+padding: 80px 25px 25px;
+overflow-y: auto;
+z-index: 999;
+margin: 0;
+}
+.rsr-page .nav-menu.active {
+display: flex;
+}
+.rsr-page .nav-item {
+width: 100%;
+border-bottom: 1px solid #DDDDDD;
+}
+.rsr-page .nav-item > a {
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 16px 0;
+font-weight: 600;
+color: #2C2C2C;
+font-size: 1rem;
+}
+.rsr-page .nav-item > a.active {
+color: #CC9900;
+}
+.rsr-page .nav-item > a i {
+font-size: 0.8rem;
+transition: transform 0.3s;
+color: #2C2C2C;
+}
+.rsr-page .nav-item.active-dropdown > a i {
+transform: rotate(180deg);
+}
+.rsr-page .dropdown {
+display: none;
+padding-left: 20px;
+padding-bottom: 12px;
+}
+.rsr-page .nav-item.active-dropdown .dropdown {
+display: block;
+}
+.rsr-page .dropdown li a {
+display: block;
+padding: 12px 0;
+font-size: 0.95rem;
+color: #2C2C2C;
+border-bottom: 1px dashed #DDDDDD;
+}
+.rsr-page .dropdown li:last-child a {
+border-bottom: none;
+}
+.rsr-page .dropdown li a:hover {
+color: #CC9900;
+padding-left: 8px;
+}
+.rsr-page .nav-cta-section {
+margin-top: auto;
+padding-top: 25px;
+border-top: 2px solid #001F47;
+}
+.rsr-page .nav-cta-section .btn {
+width: 100%;
+padding: 16px;
+font-size: 1rem;
+}
+.rsr-page .mobile-toggle {
+display: flex;
+align-items: center;
+justify-content: center;
+width: 46px;
+height: 46px;
+font-size: 1.5rem;
+cursor: pointer;
+color: #2C2C2C;
+background: none;
+border: none;
+z-index: 1001;
+position: relative;
+}
+.rsr-page .mobile-toggle i {
+font-size: 1.5rem;
+color: #2C2C2C;
+}
+.rsr-page .nav-cta-desktop {
+display: none;
+}
+/* ========== HERO SECTION ========== */
+.rsr-page .hero-section {
+padding: 40px 0 50px;
+background: linear-gradient(135deg, rgba(0,31,71,0.88) 0%, rgba(0,15,35,0.92) 100%),
+url('https://roofingsandyspringsga.net/wp-content/uploads/2026/03/Owner-Standing-with-Branded-Roofing-Van-scaled.jpeg');
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+color: #FFFFFF;
+position: relative;
+}
+.rsr-page .hero-section::before {
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background: linear-gradient(135deg, rgba(204,153,0,0.1) 0%, rgba(184,134,11,0.05) 100%);
+pointer-events: none;
+}
+.rsr-page .hero-section .container {
+position: relative;
+z-index: 2;
+}
+.rsr-page .hero-grid {
+display: flex;
+flex-direction: column;
+gap: 30px;
+}
+.rsr-page .hero-content .breadcrumb {
+display: flex;
+flex-wrap: wrap;
+gap: 8px;
+margin-bottom: 15px;
+font-size: 0.9rem;
+}
+.rsr-page .hero-content .breadcrumb a {
+color: rgba(255,255,255,0.8);
+}
+.rsr-page .hero-content .breadcrumb a:hover {
+color: #CC9900;
+}
+.rsr-page .hero-content .breadcrumb span {
+color: rgba(255,255,255,0.8);
+}
+.rsr-page .hero-content .breadcrumb .current {
+color: #CC9900;
+font-weight: 600;
+}
+.rsr-page .hero-content h1 {
+color: #FFFFFF;
+margin-bottom: 12px;
+text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+.rsr-page .hero-subtitle {
+font-size: 1.1rem;
+color: #CC9900;
+margin-bottom: 15px;
+font-weight: 600;
+}
+.rsr-page .hero-content > p {
+color: rgba(255,255,255,0.92);
+font-size: 1rem;
+line-height: 1.8;
+text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+.rsr-page .hero-form {
+background: #FFFFFF;
+border-radius: 12px;
+padding: 25px 20px;
+box-shadow: 0 10px 40px rgba(0,31,71,0.25);
+border-top: 4px solid #CC9900;
+}
+.rsr-page .hero-form h3 {
+text-align: center;
+margin-bottom: 18px;
+color: #001F47;
+font-size: 1.2rem;
+}
+.rsr-page .hero-form iframe {
+width: 100%;
+min-height: 400px;
+border: none;
+display: block;
+}
+/* ========== TRUST BADGES STRIP ========== */
+.rsr-page .trust-badges-strip {
+background: #FFFFFF;
+border-bottom: 1px solid #DDDDDD;
+}
+.rsr-page .trust-badges-strip .container {
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+gap: 0;
+}
+.rsr-page .trust-badge-item {
+display: flex;
+align-items: center;
+gap: 12px;
+padding: 20px 15px;
+border-bottom: 1px solid #DDDDDD;
+}
+.rsr-page .trust-badge-item:nth-child(odd) {
+border-right: 1px solid #DDDDDD;
+}
+.rsr-page .trust-badge-item i {
+font-size: 1.6rem;
+color: #CC9900;
+flex-shrink: 0;
+}
+.rsr-page .trust-badge-text {
+display: flex;
+flex-direction: column;
+}
+.rsr-page .trust-badge-text strong {
+font-family: 'Montserrat', sans-serif;
+font-size: 0.85rem;
+color: #001F47;
+font-weight: 700;
+line-height: 1.3;
+}
+.rsr-page .trust-badge-text span {
+font-size: 0.78rem;
+color: #2C2C2C;
+line-height: 1.4;
+}
+/* ========== INTRO SECTION ========== */
+.rsr-page .intro-section {
+background: #FAFAFA;
+}
+.rsr-page .intro-grid {
+display: flex;
+flex-direction: column;
+gap: 30px;
+}
+.rsr-page .intro-content h2 {
+margin-bottom: 15px;
+}
+.rsr-page .intro-content > p {
+font-size: 1rem;
+line-height: 1.8;
+margin-bottom: 14px;
+}
+.rsr-page .intro-highlights {
+display: flex;
+flex-direction: column;
+gap: 14px;
+margin: 20px 0;
+}
+.rsr-page .intro-highlight-item {
+display: flex;
+align-items: flex-start;
+gap: 12px;
+padding: 14px;
+background: #FFFFFF;
+border-radius: 8px;
+border-left: 4px solid #CC9900;
+box-shadow: 0 2px 8px rgba(0,31,71,0.06);
+}
+.rsr-page .intro-highlight-item i {
+color: #CC9900;
+font-size: 1.1rem;
+margin-top: 3px;
+flex-shrink: 0;
+}
+.rsr-page .intro-highlight-item div strong {
+display: block;
+font-family: 'Montserrat', sans-serif;
+color: #001F47;
+font-size: 0.95rem;
+margin-bottom: 3px;
+}
+.rsr-page .intro-highlight-item div span {
+font-size: 0.9rem;
+color: #2C2C2C;
+line-height: 1.6;
+}
+.rsr-page .intro-sidebar {
+background: linear-gradient(135deg, #001F47 0%, #001530 100%);
+border-radius: 12px;
+padding: 30px 25px;
+color: #FFFFFF;
+}
+.rsr-page .intro-sidebar h3 {
+color: #FFFFFF;
+margin-bottom: 15px;
+text-align: center;
+}
+.rsr-page .intro-sidebar-list {
+margin-bottom: 20px;
+}
+.rsr-page .intro-sidebar-list li {
+display: flex;
+align-items: center;
+gap: 10px;
+padding: 10px 0;
+border-bottom: 1px solid rgba(204,153,0,0.2);
+color: rgba(255,255,255,0.9);
+font-size: 0.95rem;
+}
+.rsr-page .intro-sidebar-list li:last-child {
+border-bottom: none;
+}
+.rsr-page .intro-sidebar-list li i {
+color: #CC9900;
+font-size: 0.85rem;
+flex-shrink: 0;
+}
+.rsr-page .intro-sidebar .btn {
+width: 100%;
+text-align: center;
+justify-content: center;
+}
+/* ========== SERVICES GRID ========== */
+.rsr-page .services-section {
+background: #FFFFFF;
+}
+.rsr-page .services-section-header {
+text-align: center;
+margin-bottom: 35px;
+}
+.rsr-page .services-section-header h2 {
+margin-bottom: 10px;
+}
+.rsr-page .services-section-header p {
+max-width: 700px;
+margin: 0 auto;
+font-size: 1rem;
+line-height: 1.7;
+}
+.rsr-page .services-grid {
+display: grid;
+grid-template-columns: 1fr;
+gap: 18px;
+}
+.rsr-page .service-card {
+background: #FAFAFA;
+border-radius: 10px;
+padding: 25px 20px;
+display: flex;
+align-items: flex-start;
+gap: 15px;
+transition: all 0.3s ease;
+border: 1px solid #DDDDDD;
+text-decoration: none;
+}
+.rsr-page .service-card:hover {
+border-color: #CC9900;
+box-shadow: 0 6px 25px rgba(204,153,0,0.15);
+transform: translateY(-3px);
+}
+.rsr-page .service-card-icon {
+width: 50px;
+height: 50px;
+background: linear-gradient(135deg, #001F47 0%, #001530 100%);
+border-radius: 10px;
+display: flex;
+align-items: center;
+justify-content: center;
+flex-shrink: 0;
+}
+.rsr-page .service-card-icon i {
+color: #CC9900;
+font-size: 1.2rem;
+}
+.rsr-page .service-card-content h4 {
+margin-bottom: 5px;
+color: #001F47;
+}
+.rsr-page .service-card-content p {
+font-size: 0.9rem;
+line-height: 1.6;
+margin: 0;
+color: #2C2C2C;
+}
+.rsr-page .service-card:hover h4 {
+color: #CC9900;
+}
+.rsr-page .services-cta {
+text-align: center;
+margin-top: 30px;
+}
+/* ========== SERVICE AREAS ========== */
+.rsr-page .areas-section {
+background: #FAFAFA;
+}
+.rsr-page .areas-section-header {
+text-align: center;
+margin-bottom: 30px;
+}
+.rsr-page .areas-section-header h2 {
+margin-bottom: 10px;
+}
+.rsr-page .areas-section-header p {
+max-width: 650px;
+margin: 0 auto;
+font-size: 1rem;
+}
+.rsr-page .areas-grid {
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+gap: 12px;
+}
+.rsr-page .area-card {
+background: #FFFFFF;
+padding: 18px 15px;
+border-radius: 8px;
+display: flex;
+align-items: center;
+gap: 10px;
+border: 1px solid #DDDDDD;
+transition: all 0.3s ease;
+text-decoration: none;
+}
+.rsr-page .area-card:hover {
+border-color: #CC9900;
+box-shadow: 0 4px 15px rgba(204,153,0,0.15);
+transform: translateY(-2px);
+}
+.rsr-page .area-card i {
+color: #CC9900;
+font-size: 1rem;
+flex-shrink: 0;
+}
+.rsr-page .area-card span {
+font-weight: 600;
+font-family: 'Montserrat', sans-serif;
+font-size: 0.9rem;
+color: #001F47;
+}
+.rsr-page .area-card:hover span {
+color: #CC9900;
+}
+/* ========== WHY CHOOSE US ========== */
+.rsr-page .why-section {
+background: linear-gradient(135deg, #001F47 0%, #001530 100%);
+color: #FFFFFF;
+}
+.rsr-page .why-section-header {
+text-align: center;
+margin-bottom: 35px;
+}
+.rsr-page .why-section-header h2 {
+color: #FFFFFF;
+margin-bottom: 10px;
+}
+.rsr-page .why-section-header p {
+color: rgba(255,255,255,0.9);
+max-width: 650px;
+margin: 0 auto;
+}
+.rsr-page .why-grid {
+display: grid;
+grid-template-columns: 1fr;
+gap: 18px;
+}
+.rsr-page .why-card {
+background: rgba(255,255,255,0.05);
+border: 1px solid rgba(204,153,0,0.2);
+border-radius: 10px;
+padding: 25px 20px;
+text-align: center;
+transition: all 0.3s ease;
+}
+.rsr-page .why-card:hover {
+background: rgba(255,255,255,0.1);
+border-color: #CC9900;
+transform: translateY(-3px);
+}
+.rsr-page .why-card i {
+font-size: 2rem;
+color: #CC9900;
+margin-bottom: 14px;
+display: block;
+}
+.rsr-page .why-card h4 {
+color: #FFFFFF;
+margin-bottom: 8px;
+}
+.rsr-page .why-card p {
+color: rgba(255,255,255,0.85);
+font-size: 0.9rem;
+margin: 0;
+line-height: 1.6;
+}
+/* ========== CONTACT CTA SECTION ========== */
+.rsr-page .contact-cta-section {
+background: linear-gradient(135deg, #001F47 0%, #001530 100%);
+color: #FFFFFF;
+}
+.rsr-page .contact-cta-grid {
+display: flex;
+flex-direction: column;
+gap: 35px;
+}
+.rsr-page .contact-cta-content h2 {
+color: #FFFFFF;
+margin-bottom: 12px;
+}
+.rsr-page .contact-cta-content > p {
+color: rgba(255,255,255,0.95);
+font-size: 1rem;
+margin-bottom: 18px;
+line-height: 1.8;
+}
+.rsr-page .contact-details-list {
+margin: 0;
+padding: 0;
+}
+.rsr-page .contact-details-list li {
+display: flex;
+align-items: center;
+gap: 14px;
+padding: 12px 0;
+color: #FFFFFF;
+font-size: 0.95rem;
+}
+.rsr-page .contact-details-list li i {
+background: rgba(204,153,0,0.2);
+padding: 12px;
+border-radius: 50%;
+width: 44px;
+height: 44px;
+display: flex;
+align-items: center;
+justify-content: center;
+flex-shrink: 0;
+color: #CC9900;
+font-size: 1rem;
+}
+.rsr-page .contact-details-list li a {
+color: #FFFFFF;
+word-break: break-word;
+}
+.rsr-page .contact-details-list li a:hover {
+color: #CC9900;
+text-decoration: underline;
+}
+.rsr-page .contact-cta-content .btn {
+background: #CC9900;
+color: #FFFFFF;
+margin-top: 18px;
+}
+.rsr-page .contact-cta-content .btn:hover {
+background: #B8860B;
+color: #FFFFFF;
+transform: translateY(-2px);
+}
+.rsr-page .contact-cta-form {
+background: #FFFFFF;
+border-radius: 12px;
+padding: 25px 20px;
+box-shadow: 0 10px 40px rgba(0,31,71,0.2);
+border-top: 4px solid #CC9900;
+}
+.rsr-page .contact-cta-form h3 {
+text-align: center;
+margin-bottom: 18px;
+font-size: 1.2rem;
+color: #001F47;
+}
+.rsr-page .contact-cta-form iframe {
+width: 100%;
+min-height: 400px;
+border: none;
+display: block;
+}
+/* ========== FOOTER ========== */
+.rsr-page .site-footer {
+background: #001F47;
+color: #FFFFFF;
+padding: 50px 0 110px;
+}
+.rsr-page .footer-grid {
+display: flex;
+flex-direction: column;
+gap: 35px;
+}
+.rsr-page .footer-col h3 {
+font-size: 1.05rem;
+border-bottom: 2px solid #CC9900;
+padding-bottom: 12px;
+margin-bottom: 18px;
+display: inline-block;
+color: #FFFFFF;
+}
+.rsr-page .footer-logo-img {
+background: #FFFFFF;
+padding: 12px;
+border-radius: 10px;
+margin-bottom: 18px;
+max-width: 150px;
+display: inline-block;
+}
+.rsr-page .footer-col > p {
+color: rgba(255,255,255,0.9);
+font-size: 0.95rem;
+line-height: 1.7;
+}
+.rsr-page .footer-links {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 10px;
+}
+.rsr-page .footer-links a {
+color: rgba(255,255,255,0.9);
+font-size: 0.95rem;
+display: block;
+padding: 6px 0;
+}
+.rsr-page .footer-links a:hover {
+color: #CC9900;
+padding-left: 6px;
+}
+.rsr-page .footer-contact p {
+display: flex;
+align-items: flex-start;
+gap: 12px;
+margin-bottom: 12px;
+font-size: 0.95rem;
+color: rgba(255,255,255,0.9);
+}
+.rsr-page .footer-contact i {
+color: #CC9900;
+margin-top: 4px;
+flex-shrink: 0;
+font-size: 0.95rem;
+width: 18px;
+}
+.rsr-page .footer-contact a {
+color: #CC9900;
+word-break: break-word;
+}
+.rsr-page .footer-contact a:hover {
+color: #FFFFFF;
+}
+.rsr-page .copyright {
+border-top: 1px solid rgba(204,153,0,0.3);
+padding-top: 25px;
+margin-top: 35px;
+text-align: center;
+font-size: 0.85rem;
+color: rgba(255,255,255,0.6);
+}
+.rsr-page .copyright p {
+color: rgba(255,255,255,0.6);
+margin: 0;
+}
+/* ========== MOBILE CALL BAR ========== */
+.rsr-page .mobile-call-bar {
+display: flex;
+align-items: center;
+justify-content: center;
+position: fixed;
+bottom: 0;
+left: 0;
+width: 100%;
+background: linear-gradient(135deg, #CC9900 0%, #B8860B 100%);
+color: #FFFFFF;
+padding: 16px;
+font-weight: 700;
+font-size: 1rem;
+z-index: 9998;
+box-shadow: 0 -4px 25px rgba(0,0,0,0.25);
+gap: 10px;
+text-decoration: none;
+}
+.rsr-page .mobile-call-bar:hover {
+background: linear-gradient(135deg, #B8860B 0%, #9A7209 100%);
+color: #FFFFFF;
+}
+.rsr-page .mobile-call-bar i {
+animation: rsr-ring 1s infinite;
+font-size: 1.15rem;
+}
+@keyframes rsr-ring {
+0%, 100% { transform: rotate(0); }
+25% { transform: rotate(-12deg); }
+75% { transform: rotate(12deg); }
+}
+/* ========== FLOATING CALL POP-OUT BUTTON ========== */
+.rsr-page .call-popout {
+position: fixed;
+bottom: 90px;
+right: 20px;
+z-index: 9997;
+display: flex;
+align-items: center;
+gap: 0;
+}
+.rsr-page .call-popout-btn {
+width: 60px;
+height: 60px;
+background: linear-gradient(135deg, #CC9900 0%, #B8860B 100%);
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+color: #FFFFFF;
+font-size: 1.5rem;
+box-shadow: 0 4px 20px rgba(204, 153, 0, 0.5);
+cursor: pointer;
+transition: all 0.3s ease;
+position: relative;
+z-index: 2;
+text-decoration: none;
+border: 3px solid #FFFFFF;
+}
+.rsr-page .call-popout-btn:hover {
+transform: scale(1.1);
+box-shadow: 0 6px 30px rgba(204, 153, 0, 0.6);
+background: linear-gradient(135deg, #B8860B 0%, #9A7209 100%);
+color: #FFFFFF;
+}
+.rsr-page .call-popout-btn i {
+animation: rsr-ring 1.5s infinite;
+}
+.rsr-page .call-popout-label {
+background: #001F47;
+color: #FFFFFF;
+padding: 10px 20px 10px 25px;
+border-radius: 30px 0 0 30px;
+font-size: 0.9rem;
+font-weight: 700;
+font-family: 'Montserrat', sans-serif;
+white-space: nowrap;
+box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+margin-right: -15px;
+position: relative;
+z-index: 1;
+opacity: 0;
+transform: translateX(20px);
+transition: all 0.3s ease;
+pointer-events: none;
+}
+.rsr-page .call-popout:hover .call-popout-label {
+opacity: 1;
+transform: translateX(0);
+pointer-events: auto;
+}
+.rsr-page .call-popout-label a {
+color: #CC9900;
+text-decoration: none;
+transition: color 0.3s ease;
+}
+.rsr-page .call-popout-label a:hover {
+color: #FFFFFF;
+}
+.rsr-page .call-popout-btn::before {
+content: '';
+position: absolute;
+width: 100%;
+height: 100%;
+border-radius: 50%;
+background: rgba(204, 153, 0, 0.4);
+animation: rsr-pulse 2s infinite;
+z-index: -1;
+}
+@keyframes rsr-pulse {
+0% { transform: scale(1); opacity: 0.7; }
+50% { transform: scale(1.4); opacity: 0; }
+100% { transform: scale(1); opacity: 0; }
+}
+/* ========== POPUP MODAL ========== */
+.rsr-page .popup-overlay {
+display: none;
+position: fixed;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+width: 100%;
+height: 100%;
+background: rgba(0,0,0,0.88);
+z-index: 999999;
+align-items: center;
+justify-content: center;
+padding: 20px;
+}
+.rsr-page .popup-overlay.active {
+display: flex !important;
+}
+.rsr-page .popup-box {
+background: #FFFFFF;
+border-radius: 14px;
+max-width: 340px;
+width: 100%;
+text-align: center;
+overflow: visible;
+box-shadow: 0 25px 70px rgba(0,0,0,0.45);
+position: relative;
+animation: rsr-popupSlide 0.3s ease;
+}
+@keyframes rsr-popupSlide {
+from { opacity: 0; transform: scale(0.9) translateY(-25px); }
+to { opacity: 1; transform: scale(1) translateY(0); }
+}
+.rsr-page .popup-close {
+position: absolute;
+top: -14px;
+right: -14px;
+width: 40px;
+height: 40px;
+background: #001F47;
+border: 3px solid #FFFFFF;
+border-radius: 50%;
+cursor: pointer;
+font-size: 1rem;
+color: #FFFFFF;
+display: flex;
+align-items: center;
+justify-content: center;
+z-index: 10;
+transition: all 0.3s ease;
+padding: 0;
+}
+.rsr-page .popup-close:hover {
+background: #CC9900;
+color: #FFFFFF;
+transform: rotate(90deg);
+}
+.rsr-page .popup-close i {
+font-size: 1rem;
+color: inherit;
+}
+.rsr-page .popup-header {
+background: linear-gradient(135deg, #001F47 0%, #001530 100%);
+color: #FFFFFF;
+padding: 30px 25px;
+border-radius: 14px 14px 0 0;
+}
+.rsr-page .popup-header > i {
+font-size: 2.5rem;
+margin-bottom: 12px;
+display: block;
+color: #CC9900;
+}
+.rsr-page .popup-header h3 {
+color: #FFFFFF;
+font-size: 1.3rem;
+margin: 0;
+}
+.rsr-page .popup-header p {
+color: rgba(255,255,255,0.8);
+font-size: 0.9rem;
+margin-top: 8px;
+}
+.rsr-page .popup-body {
+padding: 30px 25px;
+}
+.rsr-page .popup-body .btn {
+width: 100%;
+padding: 16px;
+font-size: 1rem;
+background: #CC9900;
+color: #FFFFFF;
+}
+.rsr-page .popup-body .btn:hover {
+background: #B8860B;
+}
+.rsr-page .popup-phone {
+display: block;
+margin-top: 14px;
+font-size: 1.35rem;
+font-weight: 700;
+color: #001F47;
+text-decoration: none;
+}
+.rsr-page .popup-phone:hover {
+color: #CC9900;
+}
+.rsr-page .popup-note {
+margin-top: 15px;
+font-size: 0.85rem;
+color: #2C2C2C;
+}
+/* ========== TABLET (600px+) ========== */
+@media (min-width: 600px) {
+.rsr-page .container { padding: 0 30px; }
+.rsr-page .section-padding { padding: 60px 0; }
+.rsr-page .hero-section { padding: 60px 0; }
+.rsr-page .hero-form { padding: 30px; }
+.rsr-page .trust-badges-strip .container { grid-template-columns: repeat(4, 1fr); }
+.rsr-page .trust-badge-item { border-bottom: none; }
+.rsr-page .trust-badge-item:nth-child(odd) { border-right: 1px solid #DDDDDD; }
+.rsr-page .trust-badge-item:nth-child(even) { border-right: none; }
+.rsr-page .trust-badge-item:nth-child(-n+3) { border-right: 1px solid #DDDDDD; }
+.rsr-page .services-grid { grid-template-columns: repeat(2, 1fr); }
+.rsr-page .areas-grid { grid-template-columns: repeat(4, 1fr); }
+.rsr-page .why-grid { grid-template-columns: repeat(2, 1fr); }
+.rsr-page .contact-cta-grid {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 40px;
+align-items: center;
+}
+.rsr-page .footer-grid {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 35px;
+}
+.rsr-page .footer-links { grid-template-columns: 1fr; }
+.rsr-page .call-popout { bottom: 100px; right: 25px; }
+.rsr-page .call-popout-btn { width: 65px; height: 65px; font-size: 1.6rem; }
+}
+/* ========== DESKTOP (992px+) ========== */
+@media (min-width: 992px) {
+.rsr-page .container { padding: 0 40px; max-width: 1200px; }
+.rsr-page .section-padding { padding: 80px 0; }
+.rsr-page .top-bar { display: block; }
+.rsr-page .nav-container { padding: 15px 40px; max-width: 1200px; }
+.rsr-page .logo img { max-height: 60px; }
+.rsr-page .mobile-toggle { display: none; }
+.rsr-page .nav-cta-mobile { display: none; }
+.rsr-page .nav-menu {
+display: flex !important;
+position: static;
+width: auto;
+height: auto;
+background: transparent;
+flex-direction: row;
+padding: 0;
+overflow: visible;
+gap: 32px;
+align-items: center;
+}
+.rsr-page .nav-item { width: auto; border-bottom: none; position: relative; }
+.rsr-page .nav-item > a { padding: 12px 0; gap: 6px; }
+.rsr-page .nav-item:hover > a { color: #CC9900; }
+.rsr-page .nav-item:hover > a i { transform: rotate(180deg); }
+.rsr-page .dropdown {
+display: none;
+position: absolute;
+top: 100%;
+left: 0;
+background: #FFFFFF;
+min-width: 280px;
+box-shadow: 0 10px 40px rgba(0,31,71,0.18);
+border-top: 3px solid #CC9900;
+padding: 0;
+max-height: 420px;
+overflow-y: auto;
+border-radius: 0 0 10px 10px;
+z-index: 1001;
+}
+.rsr-page .nav-item:hover .dropdown { display: block; }
+.rsr-page .dropdown li a { padding: 14px 20px; border-bottom: 1px solid #DDDDDD; }
+.rsr-page .dropdown li a:hover { background: #FAFAFA; color: #CC9900; padding-left: 25px; }
+.rsr-page .nav-cta-section { display: none; }
+.rsr-page .nav-cta-desktop { display: flex; margin-left: auto; }
+.rsr-page .hero-section { padding: 90px 0; background-attachment: fixed; }
+.rsr-page .hero-grid {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 60px;
+align-items: center;
+}
+.rsr-page .hero-subtitle { font-size: 1.35rem; }
+.rsr-page .hero-content > p { font-size: 1.1rem; }
+.rsr-page .hero-form { padding: 35px; }
+.rsr-page .hero-form h3 { font-size: 1.35rem; }
+.rsr-page .hero-form iframe { min-height: 450px; }
+.rsr-page .intro-grid {
+display: grid;
+grid-template-columns: 1.6fr 1fr;
+gap: 50px;
+align-items: flex-start;
+}
+.rsr-page .intro-highlights { flex-direction: row; flex-wrap: wrap; }
+.rsr-page .intro-highlight-item { flex: 1 1 calc(50% - 7px); min-width: 250px; }
+.rsr-page .services-grid { grid-template-columns: repeat(3, 1fr); }
+.rsr-page .why-grid { grid-template-columns: repeat(4, 1fr); }
+.rsr-page .contact-cta-grid { gap: 70px; }
+.rsr-page .contact-cta-form { padding: 40px; }
+.rsr-page .contact-cta-form iframe { min-height: 450px; }
+.rsr-page .site-footer { padding: 70px 0 40px; }
+.rsr-page .footer-grid {
+display: grid;
+grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+gap: 50px;
+}
+.rsr-page .mobile-call-bar { display: none; }
+.rsr-page .call-popout { bottom: 30px; right: 30px; }
+.rsr-page .call-popout-btn { width: 70px; height: 70px; font-size: 1.75rem; }
+.rsr-page .call-popout-label { font-size: 0.95rem; padding: 12px 22px 12px 28px; }
+}
+/* ========== LARGE DESKTOP (1200px+) ========== */
+@media (min-width: 1200px) {
+.rsr-page .container { max-width: 1200px; padding: 0 50px; }
+.rsr-page .nav-container { max-width: 1200px; }
+.rsr-page .nav-menu { gap: 38px; }
+.rsr-page .hero-grid { gap: 80px; }
+.rsr-page .hero-section { padding: 100px 0; }
+}
+</style>
+<!-- ========== MAIN WRAPPER ========== -->
+<div class="rsr-page">
+<!-- Popup Modal -->
+<div class="popup-overlay" id="rsrPopup">
+<div class="popup-box">
+<button class="popup-close" id="rsrPopupClose" type="button" aria-label="Close">
+<i class="fas fa-times"></i>
+</button>
+<div class="popup-header">
+<i class="fas fa-screwdriver-wrench"></i>
+<h3>Your Roof Works Hard Every Day</h3>
+<p>Make Sure It's Ready for What's Coming</p>
+</div>
+<div class="popup-body">
+<a href="tel:+17708218222" class="btn"><i class="fas fa-phone"></i> Book a Free Inspection</a>
+<a href="tel:+17708218222" class="popup-phone">(770) 821-8222</a>
+<p class="popup-note"><i class="fas fa-medal"></i> CertainTeed SELECT ShingleMaster Certified</p>
+</div>
+</div>
+</div>
+<!-- Top Bar -->
+<div class="top-bar">
+<div class="container">
+<div class="top-info">
+<span><i class="fas fa-map-marker-alt"></i>Sandy Springs, GA — Serving All of Fulton County Since 1990</span>
+<span><i class="fas fa-award"></i>Angi Super Service Award &amp; GAF Master Elite Certified</span>
+<span><i class="fas fa-envelope"></i><a href="mailto:riverspringsroofing@gmail.com">riverspringsroofing@gmail.com</a></span>
+</div>
+<div class="social-icons">
+<span>Follow Us:</span>
+<a href="https://www.facebook.com/riverspringsroofing" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+<a href="https://www.instagram.com/riverspringsroofing" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+<a href="https://www.pinterest.com/riverspringsroofing/" target="_blank" rel="noopener noreferrer" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
+<a href="https://www.youtube.com/@riverspringsroofing" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+<a href="https://www.tiktok.com/@riverspringsroofing" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+</div>
+</div>
+</div>
+<!-- Navigation -->
+<nav class="main-nav">
+<div class="nav-container">
+<a href="https://roofingsandyspringsga.net/" class="logo">
+<img src="https://roofingsandyspringsga.net/wp-content/uploads/2026/03/River-Springs-Roofing-Logo-e1772797797335.png" alt="River Springs Roofing - Sandy Springs GA Roofing Contractor" width="150" height="60">
+</a>
+<div class="nav-cta-mobile">
+<a href="tel:+17708218222" class="btn" aria-label="Call Now"><i class="fas fa-phone"></i></a>
+<button class="mobile-toggle" id="rsrMobileToggle" type="button" aria-label="Menu">
+<i class="fas fa-bars"></i>
+</button>
+</div>
+<ul class="nav-menu" id="rsrNavMenu">
+<li class="nav-item"><a href="https://roofingsandyspringsga.net/" class="active">Home</a></li>
+<li class="nav-item dropdown-trigger">
+<a href="https://roofingsandyspringsga.net/services/">Services <i class="fas fa-caret-down"></i></a>
+<ul class="dropdown">
+<li><a href="https://roofingsandyspringsga.net/services/asphalt-shingle-roof-replacement/">Asphalt Shingle Roof</a></li>
+<li><a href="https://roofingsandyspringsga.net/services/cedar-shake-roof-repair-replacement/">Cedar Shake Roof</a></li>
+<li><a href="https://roofingsandyspringsga.net/services/chimney-flashing-repair-replacement/">Chimney Flashing</a></li>
+<li><a href="https://roofingsandyspringsga.net/services/commercial-roof-repair-replacement/">Commercial Roofing</a></li>
+<li><a href="https://roofingsandyspringsga.net/services/emergency-roof-repair-replacement/">Emergency Roof Repair</a></li>
+<li><a href="https://roofingsandyspringsga.net/services/fascia-soffit-repair-replacement/">Fascia &amp; Soffit Repair</a></li>
+<li><a href="https://roofingsandyspringsga.net/services/flat-roof-repair-replacement/">Flat Roof Repair</a></li>
+<li><a href="https://roofingsandyspringsga.net/services/gutter-cleaning/">Gutter Cleaning</a></li>
+<li><a href="https://roofingsandyspringsga.net/services/hail-damage-roof-repair-replacement/">Hail Damage Repair</a></li>
+<li><a href="https://roofingsandyspringsga.net/services/heat-cable-replacement/">Heat Cable Replacement</a></li>
+<li><a href="https://roofingsandyspringsga.net/services/metal-roof-repair-replacement/">Metal Roof Repair</a></li>
+<li><a href="https://roofingsandyspringsga.net/services/roof-cleaning-maintainance/">Roof Cleaning</a></li>
+<li><a href="https://roofingsandyspringsga.net/services/damage-roof-inspection/">Roof Inspection</a></li>
+<li><a href="https://roofingsandyspringsga.net/services/roof-leak-detection/">Roof Leak Detection</a></li>
+<li><a href="https://roofingsandyspringsga.net/services/roof-attic-ventilation/">Attic Ventilation</a></li>
+<li><a href="https://roofingsandyspringsga.net/services/shingle-roof-repair-replacement/">Shingle Roof Repair</a></li>
+<li><a href="https://roofingsandyspringsga.net/services/skylight-roof-repair-replacement/">Skylight Repair</a></li>
+<li><a href="https://roofingsandyspringsga.net/services/slate-roof-repair-replacement/">Slate Roof Repair</a></li>
+<li><a href="https://roofingsandyspringsga.net/services/storm-damage-roof-repair-replacement/">Storm Damage Repair</a></li>
+<li><a href="https://roofingsandyspringsga.net/services/tile-roof-repair-replacement/">Tile Roof Repair</a></li>
+<li><a href="https://roofingsandyspringsga.net/services/water-damage-roof-repair-replacement/">Water Damage Repair</a></li>
+<li><a href="https://roofingsandyspringsga.net/services/wind-damage-roof-repair-replacement/">Wind Damage Repair</a></li>
+</ul>
+</li>
+<li class="nav-item dropdown-trigger">
+<a href="https://roofingsandyspringsga.net/service-areas/">Service Areas <i class="fas fa-caret-down"></i></a>
+<ul class="dropdown">
+<li><a href="https://roofingsandyspringsga.net/service-areas/dunwoody/">Dunwoody</a></li>
+<li><a href="https://roofingsandyspringsga.net/service-areas/roswell/">Roswell</a></li>
+<li><a href="https://roofingsandyspringsga.net/service-areas/marietta/">Marietta</a></li>
+<li><a href="https://roofingsandyspringsga.net/service-areas/alpharetta/">Alpharetta</a></li>
+<li><a href="https://roofingsandyspringsga.net/service-areas/decatur/">Decatur</a></li>
+<li><a href="https://roofingsandyspringsga.net/service-areas/atlanta-downtown/">Atlanta Downtown</a></li>
+<li><a href="https://roofingsandyspringsga.net/service-areas/smyrna/">Smyrna</a></li>
+<li><a href="https://roofingsandyspringsga.net/service-areas/kennesaw/">Kennesaw</a></li>
+</ul>
+</li>
+<li class="nav-item"><a href="https://roofingsandyspringsga.net/about/">About</a></li>
+<li class="nav-item"><a href="https://roofingsandyspringsga.net/contact/">Contact</a></li>
+<li class="nav-cta-desktop">
+<a href="tel:+17708218222" class="btn"><i class="fas fa-phone"></i> (770) 821-8222</a>
+</li>
+<li class="nav-cta-section">
+<a href="tel:+17708218222" class="btn"><i class="fas fa-phone"></i> Call: (770) 821-8222</a>
+</li>
+</ul>
+</div>
+</nav>
+<!-- ========== HERO SECTION ========== -->
+<section class="hero-section">
+<div class="container">
+<div class="hero-grid">
+<div class="hero-content">
+<nav class="breadcrumb" aria-label="Breadcrumb">
+<a href="https://roofingsandyspringsga.net/">Home</a>
+<span>/</span>
+<span class="current">Top-Rated Roofer Sandy Springs Georgia</span>
+</nav>
+<h1>Protecting Sandy Springs Properties With Craftsmanship Backed by Five Elite Manufacturer Certifications</h1>
+<p class="hero-subtitle">Angi Super Service Award Winner — Fulton County's Trusted Roofing Contractor Since 1990</p>
+<p>Choosing a roofing contractor is one of the most significant home service decisions a Sandy Springs homeowner makes. River Springs Roofing makes that decision easy — with full transparency from the first <a href="https://roofingsandyspringsga.net/services/damage-roof-inspection/" style="color:#CC9900;text-decoration:underline;">complimentary roof inspection</a> through the final punch-list walkthrough. Our 50 professionals are trained and authorized by GAF, Owens Corning, CertainTeed, TAMKO, and Firestone — the most comprehensive certification portfolio in the north Atlanta roofing market. We back that with the written workmanship guarantee and the post-project accountability that separate us from contractors who disappear after cashing your check.</p>
+</div>
+<div class="hero-form">
+<h3>Get Your 100% Free Roof Estimate</h3>
+<iframe src="https://leads.leadsmartinc.com/?api_key=77030701545247f5e77400a12de4d6965400710c&affiliate_source=2mhnfdbill1&funnel=3&category=15&step=1&buttons=btn-warning" title="Get Your 100% Free Roof Estimate Form" loading="lazy"></iframe>
+</div>
+</div>
+</div>
+</section>
+<!-- ========== TRUST BADGES STRIP ========== -->
+<section class="trust-badges-strip">
+<div class="container">
+<div class="trust-badge-item">
+<i class="fas fa-star-half-stroke"></i>
+<div class="trust-badge-text">
+<strong>Angi Super Service Award</strong>
+<span>Verified Homeowner Excellence Rating</span>
+</div>
+</div>
+<div class="trust-badge-item">
+<i class="fas fa-gem"></i>
+<div class="trust-badge-text">
+<strong>GAF Master Elite Certified</strong>
+<span>Strongest Roofing Warranty Available</span>
+</div>
+</div>
+<div class="trust-badge-item">
+<i class="fas fa-shield-halved"></i>
+<div class="trust-badge-text">
+<strong>General Liability Insured</strong>
+<span>Workers' Comp &amp; Contractor Bond Verified</span>
+</div>
+</div>
+<div class="trust-badge-item">
+<i class="fas fa-check-circle"></i>
+<div class="trust-badge-text">
+<strong>No Subcontracting Policy</strong>
+<span>All 50 Crew Members Are Direct Employees</span>
+</div>
+</div>
+</div>
+</section>
+<!-- ========== INTRO SECTION ========== -->
+<section class="intro-section section-padding">
+<div class="container">
+<div class="intro-grid">
+<div class="intro-content">
+<h2>Three Decades of Getting It Right — And the Awards to Prove It</h2>
+<p>River Springs Roofing was not built overnight. Since 1990, we have worked project by project through Sandy Springs and every corner of Fulton County — earning recognition from GAF, Owens Corning, the Better Business Bureau, and Angi along the way. These awards were not purchased or applied for — they were earned through consistent delivery of exactly what we promised.</p>
+<p>Our service area stretches from the Chattahoochee River communities of Sandy Springs west to <a href="https://roofingsandyspringsga.net/service-areas/smyrna/" style="color:#CC9900;text-decoration:underline;">Smyrna</a> and <a href="https://roofingsandyspringsga.net/service-areas/marietta/" style="color:#CC9900;text-decoration:underline;">Marietta</a>, north to <a href="https://roofingsandyspringsga.net/service-areas/alpharetta/" style="color:#CC9900;text-decoration:underline;">Alpharetta</a> and <a href="https://roofingsandyspringsga.net/service-areas/kennesaw/" style="color:#CC9900;text-decoration:underline;">Kennesaw</a>, and east toward <a href="https://roofingsandyspringsga.net/service-areas/decatur/" style="color:#CC9900;text-decoration:underline;">Decatur</a>. Wherever we work, we bring the same crew standards, same material quality, and the same commitment to leaving every property in better condition than we found it. <a href="https://roofingsandyspringsga.net/about/" style="color:#CC9900;text-decoration:underline;">Read the full story of River Springs Roofing</a>.</p>
+<div class="intro-highlights">
+<div class="intro-highlight-item">
+<i class="fas fa-file-shield"></i>
+<div>
+<strong>Dual-Layer Warranty Protection</strong>
+<span>Every completed project is covered by both our written workmanship guarantee and the manufacturer's material warranty — giving you two independent protection layers that stand independently of each other.</span>
+</div>
+</div>
+<div class="intro-highlight-item">
+<i class="fas fa-solar-panel"></i>
+<div>
+<strong>Energy-Efficient Roofing Options</strong>
+<span>We offer ENERGY STAR-qualified cool roof shingles and metal roofing with reflective coatings that reduce attic heat gain by up to 40% — delivering measurable utility savings through Georgia's long summer season.</span>
+</div>
+</div>
+<div class="intro-highlight-item">
+<i class="fas fa-scale-balanced"></i>
+<div>
+<strong>Independent Second Opinions Welcome</strong>
+<span>Got a quote that seems inflated? We offer free second-opinion inspections across Sandy Springs with no sales pressure whatsoever. We tell you what the roof needs — nothing more, nothing less.</span>
+</div>
+</div>
+<div class="intro-highlight-item">
+<i class="fas fa-medal"></i>
+<div>
+<strong>Real-Time Crew Accountability</strong>
+<span>Our project management system tracks material delivery, crew arrivals, and stage completions in real time. Your project manager can answer any question with up-to-the-minute accuracy — no guessing. <a href="https://roofingsandyspringsga.net/contact/" style="color:#CC9900;text-decoration:underline;">Contact us anytime</a>.</span>
+</div>
+</div>
+</div>
+</div>
+<div class="intro-sidebar">
+<h3>Active Promotions for Homeowners</h3>
+<ul class="intro-sidebar-list">
+<li><i class="fas fa-check-circle"></i> Complimentary Roof Inspection — No Strings</li>
+<li><i class="fas fa-check-circle"></i> Save $500–$1,000 on Full Replacements</li>
+<li><i class="fas fa-check-circle"></i> Zero-Interest Financing — 12 Months</li>
+<li><i class="fas fa-check-circle"></i> Complimentary Gutter Package Included</li>
+<li><i class="fas fa-check-circle"></i> Senior Citizen Price Reduction</li>
+<li><i class="fas fa-check-circle"></i> Active-Duty Military Family Rate</li>
+<li><i class="fas fa-check-circle"></i> First Responder Appreciation Discount</li>
+</ul>
+<a href="tel:+17708218222" class="btn"><i class="fas fa-phone"></i> Lock In Your Savings</a>
+</div>
+</div>
+</div>
+</section>
+<!-- ========== SERVICES SECTION ========== -->
+<section class="services-section section-padding">
+<div class="container">
+<div class="services-section-header">
+<h2>A Roofing Service for Every Situation Your Property May Face</h2>
+<p>Sandy Springs homeowners and Fulton County business owners deal with a wide range of roofing demands. Our 22 specialized services cover the full spectrum — from first notice of damage to final warranty registration.</p>
+</div>
+<div class="services-grid">
+<a href="https://roofingsandyspringsga.net/services/asphalt-shingle-roof-replacement/" class="service-card">
+<div class="service-card-icon"><i class="fas fa-layer-group"></i></div>
+<div class="service-card-content">
+<h4>Asphalt Shingle Roof Replacement</h4>
+<p>Sandy Springs' most popular roofing service. We install complete GAF, Owens Corning, and CertainTeed systems — not just shingles — with manufacturer warranty registration and a signed workmanship guarantee every time.</p>
+</div>
+</a>
+<a href="https://roofingsandyspringsga.net/services/storm-damage-roof-repair-replacement/" class="service-card">
+<div class="service-card-icon"><i class="fas fa-bolt"></i></div>
+<div class="service-card-content">
+<h4>Storm &amp; Severe Weather Restoration</h4>
+<p>When a Georgia supercell tears through Fulton County, our response crews mobilize within hours — tarping, securing, and documenting damage with the detail insurance adjusters require for full claim approval.</p>
+</div>
+</a>
+<a href="https://roofingsandyspringsga.net/services/hail-damage-roof-repair-replacement/" class="service-card">
+<div class="service-card-icon"><i class="fas fa-snowflake"></i></div>
+<div class="service-card-content">
+<h4>Hail Damage Inspection &amp; Repair</h4>
+<p>Hail bruises shingles invisibly but the damage is progressive and covered by most policies. Our calibrated documentation process gives your insurer everything they need to approve your claim without negotiation.</p>
+</div>
+</a>
+<a href="https://roofingsandyspringsga.net/services/commercial-roof-repair-replacement/" class="service-card">
+<div class="service-card-icon"><i class="fas fa-building"></i></div>
+<div class="service-card-content">
+<h4>Commercial Roof Systems</h4>
+<p>Firestone-certified flat and low-slope membrane roofing for Sandy Springs commercial real estate — from independent retailers on Roswell Road to multi-building office campuses near Perimeter Center.</p>
+</div>
+</a>
+<a href="https://roofingsandyspringsga.net/services/roof-leak-detection/" class="service-card">
+<div class="service-card-icon"><i class="fas fa-magnifying-glass-water"></i></div>
+<div class="service-card-content">
+<h4>Precision Roof Leak Detection</h4>
+<p>Ceiling stains and interior water marks rarely appear directly beneath the actual entry point. We use controlled water testing and thermal imaging to pinpoint the true leak source before any repair work begins.</p>
+</div>
+</a>
+<a href="https://roofingsandyspringsga.net/services/fascia-soffit-repair-replacement/" class="service-card">
+<div class="service-card-icon"><i class="fas fa-ruler-combined"></i></div>
+<div class="service-card-content">
+<h4>Fascia &amp; Soffit Replacement</h4>
+<p>Deteriorating wood fascia creates moisture entry points behind your gutters that rot your roof edge from the inside. We replace with sealed, color-matched composite or aluminum that performs for decades.</p>
+</div>
+</a>
+<a href="https://roofingsandyspringsga.net/services/metal-roof-repair-replacement/" class="service-card">
+<div class="service-card-icon"><i class="fas fa-bars"></i></div>
+<div class="service-card-content">
+<h4>Metal Roofing Systems</h4>
+<p>Standing seam steel and corrugated metal roofing systems for homeowners seeking a 50-year roof with superior wind resistance, energy reflectivity, and virtually zero ongoing maintenance demands.</p>
+</div>
+</a>
+<a href="https://roofingsandyspringsga.net/services/skylight-roof-repair-replacement/" class="service-card">
+<div class="service-card-icon"><i class="fas fa-sun"></i></div>
+<div class="service-card-content">
+<h4>Skylight Repair &amp; Replacement</h4>
+<p>Aging skylight seals and improper original flashing cause chronic leaks in Sandy Springs homes built in the 1980s and 1990s. We diagnose the actual failure point and resolve it permanently — not temporarily.</p>
+</div>
+</a>
+<a href="https://roofingsandyspringsga.net/services/roof-cleaning-maintainance/" class="service-card">
+<div class="service-card-icon"><i class="fas fa-leaf"></i></div>
+<div class="service-card-content">
+<h4>Roof Cleaning &amp; Maintenance</h4>
+<p>Algae, moss, and lichen growth actively degrade shingle granules and accelerate aging. Our biocide soft-wash treatment restores appearance and extends roof life without damaging granule adhesion or warranty coverage.</p>
+</div>
+</a>
+</div>
+<div class="services-cta">
+<a href="https://roofingsandyspringsga.net/services/" class="btn"><i class="fas fa-list"></i> Browse All 22 Services</a>
+</div>
+</div>
+</section>
+<!-- ========== SERVICE AREAS SECTION ========== -->
+<section class="areas-section section-padding">
+<div class="container">
+<div class="areas-section-header">
+<h2>Local Crews — Fast Response — Across Every Community We Serve</h2>
+<p>From our Sandy Springs base, our five fully stocked service vehicles reach every community below — typically within hours of your first call, without routing you through a national dispatch center.</p>
+</div>
+<div class="areas-grid">
+<a href="https://roofingsandyspringsga.net/service-areas/dunwoody/" class="area-card">
+<i class="fas fa-map-pin"></i><span>Dunwoody</span>
+</a>
+<a href="https://roofingsandyspringsga.net/service-areas/roswell/" class="area-card">
+<i class="fas fa-map-pin"></i><span>Roswell</span>
+</a>
+<a href="https://roofingsandyspringsga.net/service-areas/marietta/" class="area-card">
+<i class="fas fa-map-pin"></i><span>Marietta</span>
+</a>
+<a href="https://roofingsandyspringsga.net/service-areas/alpharetta/" class="area-card">
+<i class="fas fa-map-pin"></i><span>Alpharetta</span>
+</a>
+<a href="https://roofingsandyspringsga.net/service-areas/decatur/" class="area-card">
+<i class="fas fa-map-pin"></i><span>Decatur</span>
+</a>
+<a href="https://roofingsandyspringsga.net/service-areas/atlanta-downtown/" class="area-card">
+<i class="fas fa-map-pin"></i><span>Atlanta Downtown</span>
+</a>
+<a href="https://roofingsandyspringsga.net/service-areas/smyrna/" class="area-card">
+<i class="fas fa-map-pin"></i><span>Smyrna</span>
+</a>
+<a href="https://roofingsandyspringsga.net/service-areas/kennesaw/" class="area-card">
+<i class="fas fa-map-pin"></i><span>Kennesaw</span>
+</a>
+</div>
+</div>
+</section>
+<!-- ========== WHY CHOOSE US SECTION ========== -->
+<section class="why-section section-padding">
+<div class="container">
+<div class="why-section-header">
+<h2>What 35 Years of Roofing in Sandy Springs Has Taught Us</h2>
+<p>Longevity in this industry is not accidental. It is earned through four operating principles that we have never compromised — on any project, for any reason.</p>
+</div>
+<div class="why-grid">
+<div class="why-card">
+<i class="fas fa-pencil-ruler"></i>
+<h4>Spec-Accurate Installation</h4>
+<p>Every fastener, overlap, and flashing detail follows manufacturer specifications exactly. Deviating from spec — even slightly — voids warranties and creates long-term leak pathways. We do not take those shortcuts.</p>
+</div>
+<div class="why-card">
+<i class="fas fa-comments"></i>
+<h4>Proactive Communication</h4>
+<p>We contact you before problems arise — not after. Schedule changes, material delays, and weather holds are communicated before your window, not after you have been waiting at home all morning.</p>
+</div>
+<div class="why-card">
+<i class="fas fa-recycle"></i>
+<h4>Responsible Waste Management</h4>
+<p>Tear-off debris is sorted and disposed of through licensed haulers. We bring correctly-sized dumpsters so debris does not spill onto your driveway, and we sweep nails with calibrated magnets after every project.</p>
+</div>
+<div class="why-card">
+<i class="fas fa-handshake-simple"></i>
+<h4>Referral-Driven Growth</h4>
+<p>The majority of our new business comes from existing customers referring neighbors. We never take that trust for granted — every project is treated as an opportunity to earn the next referral from a satisfied homeowner.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- ========== CONTACT CTA SECTION ========== -->
+<section class="contact-cta-section section-padding">
+<div class="container">
+<div class="contact-cta-grid">
+<div class="contact-cta-content">
+<h2>The Free Inspection Is Just the Beginning of What We Offer</h2>
+<p>Every engagement with River Springs Roofing begins with zero obligation — a complimentary inspection, an honest assessment, and a transparent written estimate. Whether you are managing active <a href="https://roofingsandyspringsga.net/services/water-damage-roof-repair-replacement/" style="color:#CC9900;text-decoration:underline;">water damage</a>, planning a <a href="https://roofingsandyspringsga.net/services/cedar-shake-roof-repair-replacement/" style="color:#CC9900;text-decoration:underline;">cedar shake roof replacement</a>, or simply overdue for a professional assessment, we respond the same day and schedule inspections within 48 hours across our entire <a href="https://roofingsandyspringsga.net/service-areas/" style="color:#CC9900;text-decoration:underline;">Fulton County service territory</a>.</p>
+<ul class="contact-details-list">
+<li><i class="fas fa-phone"></i><a href="tel:+17708218222">(770) 821-8222</a></li>
+<li><i class="fas fa-envelope"></i><a href="mailto:riverspringsroofing@gmail.com">riverspringsroofing@gmail.com</a></li>
+<li><i class="fas fa-map-marker-alt"></i><span>6642 Cherry Tree Ln NE, Atlanta, GA 30328</span></li>
+</ul>
+<a href="tel:+17708218222" class="btn"><i class="fas fa-phone"></i> Schedule Your Free Assessment</a>
+</div>
+<div class="contact-cta-form">
+<h3>We'll Be in Touch Within the Hour</h3>
+<iframe src="https://leads.leadsmartinc.com/?api_key=77030701545247f5e77400a12de4d6965400710c&affiliate_source=2mhnfdbill1&funnel=3&category=15&step=1&buttons=btn-warning" title="We'll Be in Touch Within the Hour Form" loading="lazy"></iframe>
+</div>
+</div>
+</div>
+</section>
+<!-- ========== FOOTER ========== -->
+<footer class="site-footer">
+<div class="container">
+<div class="footer-grid">
+<div class="footer-col">
+<div class="footer-logo-img">
+<img src="https://roofingsandyspringsga.net/wp-content/uploads/2026/03/River-Springs-Roofing-Logo-e1772797797335.png" alt="River Springs Roofing Logo" width="140" height="55" loading="lazy">
+</div>
+<p>River Springs Roofing is a multi-award-winning, five-manufacturer-certified roofing contractor based in Sandy Springs, GA. Since 1990, our 50 full-time professionals have delivered transparent, quality-focused residential and commercial roofing services across Fulton County and the greater north Atlanta metro area — always without subcontractors, always with a written guarantee.</p>
+</div>
+<div class="footer-col">
+<h3>Quick Links</h3>
+<ul class="footer-links">
+<li><a href="https://roofingsandyspringsga.net/">Home</a></li>
+<li><a href="https://roofingsandyspringsga.net/about/">About Us</a></li>
+<li><a href="https://roofingsandyspringsga.net/services/">All Services</a></li>
+<li><a href="https://roofingsandyspringsga.net/service-areas/">Service Areas</a></li>
+<li><a href="https://roofingsandyspringsga.net/contact/">Contact Us</a></li>
+<li><a href="https://roofingsandyspringsga.net/privacy-policy/">Privacy Policy</a></li>
+<li><a href="https://roofingsandyspringsga.net/disclaimer/">Disclaimer</a></li>
+<li><a href="https://roofingsandyspringsga.net/terms-and-conditions/">Terms &amp; Conditions</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h3>Most Requested</h3>
+<ul class="footer-links">
+<li><a href="https://roofingsandyspringsga.net/services/asphalt-shingle-roof-replacement/">Shingle Replacement</a></li>
+<li><a href="https://roofingsandyspringsga.net/services/storm-damage-roof-repair-replacement/">Storm Restoration</a></li>
+<li><a href="https://roofingsandyspringsga.net/services/hail-damage-roof-repair-replacement/">Hail Damage Repair</a></li>
+<li><a href="https://roofingsandyspringsga.net/services/commercial-roof-repair-replacement/">Commercial Roofing</a></li>
+<li><a href="https://roofingsandyspringsga.net/services/roof-leak-detection/">Leak Detection</a></li>
+<li><a href="https://roofingsandyspringsga.net/services/metal-roof-repair-replacement/">Metal Roof Systems</a></li>
+<li><a href="https://roofingsandyspringsga.net/services/damage-roof-inspection/">Free Inspection</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h3>Contact Info</h3>
+<address class="footer-contact">
+<p><i class="fas fa-map-marker-alt"></i><span>6642 Cherry Tree Ln NE, Atlanta, GA 30328</span></p>
+<p><i class="fas fa-envelope"></i><a href="mailto:riverspringsroofing@gmail.com">riverspringsroofing@gmail.com</a></p>
+<p><i class="fas fa-phone"></i><a href="tel:+17708218222">(770) 821-8222</a></p>
+<p><i class="fas fa-clock"></i><span>24/7 Emergency Roofing Response</span></p>
+</address>
+</div>
+</div>
+<div class="copyright">
+<p>&copy; 2025 River Springs Roofing. All Rights Reserved. | Sandy Springs, GA — Certified Craftsmanship You Can Count On Since 1990</p>
+</div>
+</div>
+</footer>
+<!-- Mobile Call Bar -->
+<a href="tel:+17708218222" class="mobile-call-bar">
+<i class="fas fa-phone"></i>
+<span>Call Now: (770) 821-8222</span>
+</a>
+<!-- Floating Call Pop-Out Button -->
+<div class="call-popout">
+<div class="call-popout-label">
+<a href="tel:+17708218222">(770) 821-8222</a>
+</div>
+<a href="tel:+17708218222" class="call-popout-btn" aria-label="Call Us">
+<i class="fas fa-phone"></i>
+</a>
+</div>
+</div>
+<!-- End Wrapper -->
+<script>
+(function () {
+'use strict';
+document.addEventListener('DOMContentLoaded', function () {
+// ===== POPUP MODAL =====
+var popup = document.getElementById('rsrPopup');
+var popupClose = document.getElementById('rsrPopupClose');
+if (popup && !sessionStorage.getItem('rsrPopupShown')) {
+setTimeout(function () {
+popup.classList.add('active');
+sessionStorage.setItem('rsrPopupShown', '1');
+}, 5000);
+}
+if (popupClose) {
+popupClose.addEventListener('click', function (e) {
+e.preventDefault();
+e.stopPropagation();
+popup.classList.remove('active');
+});
+}
+if (popup) {
+popup.addEventListener('click', function (e) {
+if (e.target === popup) {
+popup.classList.remove('active');
+}
+});
+}
+document.addEventListener('keydown', function (e) {
+if (e.key === 'Escape' && popup) {
+popup.classList.remove('active');
+}
+});
+// ===== MOBILE NAVIGATION =====
+var toggle = document.getElementById('rsrMobileToggle');
+var menu = document.getElementById('rsrNavMenu');
+if (toggle && menu) {
+toggle.addEventListener('click', function (e) {
+e.preventDefault();
+menu.classList.toggle('active');
+var icon = this.querySelector('i');
+if (icon) {
+if (icon.classList.contains('fa-bars')) {
+icon.classList.remove('fa-bars');
+icon.classList.add('fa-times');
+} else {
+icon.classList.remove('fa-times');
+icon.classList.add('fa-bars');
+}
+}
+});
+}
+// ===== DROPDOWN TOGGLE =====
+var dropdownTriggers = document.querySelectorAll('.rsr-page .dropdown-trigger > a');
+dropdownTriggers.forEach(function (link) {
+link.addEventListener('click', function (e) {
+if (window.innerWidth < 992) {
+e.preventDefault();
+var parent = this.parentElement;
+document.querySelectorAll('.rsr-page .dropdown-trigger').forEach(function (item) {
+if (item !== parent) {
+item.classList.remove('active-dropdown');
+}
+});
+parent.classList.toggle('active-dropdown');
+}
+});
+});
+// ===== CLOSE MENU ON LINK CLICK =====
+var menuLinks = document.querySelectorAll('.rsr-page .nav-menu > .nav-item > a:not(.dropdown-trigger > a)');
+menuLinks.forEach(function (link) {
+link.addEventListener('click', function () {
+if (window.innerWidth < 992 && menu) {
+menu.classList.remove('active');
+var icon = toggle.querySelector('i');
+if (icon) {
+icon.classList.remove('fa-times');
+icon.classList.add('fa-bars');
+}
+}
+});
+});
+});
+})();
+</script>
